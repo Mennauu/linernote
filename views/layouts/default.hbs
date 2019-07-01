@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport">
+    <title>Linernote</title>
+    <meta name="description"
+      content="Linernote brings Spotify, Youtube, articles and Social Media content from artists together in one app, supplemented by concert tickets.">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="stylesheet" href="/css/swiper.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700,900">
+  </head>
+
+  <body class="{{template}}">
+    {{{body}}}
+    {{#playback}}
+    <div class="spotify">
+      {{#if item.name}}
+      <div class="spotify__refresh">
+        <div class="spotify__progress"></div>
+        <img class="spotify__image" src="{{item.album.images.2.url}}" alt="{{item.name}}">
+        <div class="spotify__song">
+          <span class="spotify__track">{{item.name}}</span>
+          <span class="spotify__artist">{{item.artists.0.name}}</span>
+          <span class="spotify__id">{{item.id}}</span>
+        </div>
+      </div>
+      <span class="spotify__remote">{{#if is_playing}}||{{else}}▸{{/if}}</span>
+      {{else}}
+      <div class="spotify__refresh">
+        <div class="spotify__progress"></div>
+        <div class="spotify__song">
+          <span class="spotify__artist no-song">Spotify isn't playing</span>
+          <span class="spotify__id">0</span>
+        </div>
+      </div>
+      <span class="spotify__remote invisible">{{#if is_playing}}||{{else}}▸{{/if}}</span>
+      {{/if}}
+    </div>
+    {{/playback}}
+    <footer class="navigation">
+      <nav>
+        <a href="/home" class="navigation__tab">
+          <img src="/images/home-active.svg" alt="Home">
+        </a>
+        <a href="/search" class="navigation__tab">
+          <img src="/images/search-active.svg" alt="Search">
+        </a>
+        <a href="#" class="navigation__tab navigation__tab--inactive">
+          <img src="/images/list-menu.svg" alt="Library">
+        </a>
+      </nav>
+    </footer>
+    <div class="inactive-message">Not in prototype</div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/playbackstate.js"></script>
+    {{{_sections.script}}}
+    <script src="/js/inactive.js"></script>
+  </body>
+
+</html>

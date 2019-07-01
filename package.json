@@ -1,0 +1,38 @@
+{
+  "name": "linernote",
+  "version": "1.0.0",
+  "author": "Menno de Vries",
+  "description": "Linernote brings Spotify, Youtube, articles and Social Media content from artists together in one app, supplemented by concert tickets.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node -r esm app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-mongo": "^3.0.0",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^8.0.0",
+    "esm": "^3.2.25",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "express-session": "^1.16.2",
+    "fb": "^2.0.0",
+    "fn": "^0.2.0",
+    "force": "0.0.3",
+    "genius-api": "^0.4.1",
+    "html2canvas": "^1.0.0-rc.3",
+    "http": "0.0.0",
+    "login-with-twitter": "^1.2.0",
+    "mongoose": "^5.5.15",
+    "musicbrainz-api": "^0.3.8",
+    "node-fetch": "^2.6.0",
+    "passport": "^0.4.0",
+    "passport-spotify": "^1.0.1",
+    "querystring": "^0.2.0",
+    "request": "^2.88.0",
+    "socket.io": "^2.2.0",
+    "spotify-web-api-node": "^4.0.0",
+    "twitter": "^1.7.1",
+    "uuid": "^3.3.2"
+  }
+}

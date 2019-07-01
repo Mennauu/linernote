@@ -1,0 +1,64 @@
+{ album: { album_type: 'album',
+     artists: [
+      { external_urls: { spotify: 'https: //open.spotify.com/artist/0V8xaun2So5GLeMAC0fpbW' },
+          href: 'https: //api.spotify.com/v1/artists/0V8xaun2So5GLeMAC0fpbW',
+          id: '0V8xaun2So5GLeMAC0fpbW',
+          name: 'Ha Ha Tonka',
+          type: 'artist',
+          uri: 'spotify:artist: 0V8xaun2So5GLeMAC0fpbW'
+        }
+      ],
+     external_urls: { spotify: 'https: //open.spotify.com/album/3Rqy6MSnAvpPtE18TnwAns' },
+     href: 'https: //api.spotify.com/v1/albums/3Rqy6MSnAvpPtE18TnwAns',
+     id: '3Rqy6MSnAvpPtE18TnwAns',
+     images: [
+          { height: 640,
+          url:
+           'https: //i.scdn.co/image/aa651e53eb4675b27d9430edb503146c61fa7ec4',
+          width: 640
+          },
+          { height: 300,
+          url:
+           'https: //i.scdn.co/image/c3159621ab36f68e1955b8338ab12c8ce9e50c34',
+          width: 300
+          },
+          { height: 64,
+          url:
+           'https: //i.scdn.co/image/380f8cc79e2ac73f802b6789ebfaa410b61aaed6',
+          width: 64
+          }
+        ],
+     name: 'Lessons',
+     release_date: '2013-09-24',
+     release_date_precision: 'day',
+     total_tracks: 14,
+     type: 'album',
+     uri: 'spotify:album: 3Rqy6MSnAvpPtE18TnwAns'
+      },
+  artists: [
+        { external_urls: { spotify: 'https: //open.spotify.com/artist/0V8xaun2So5GLeMAC0fpbW' },
+       href: 'https: //api.spotify.com/v1/artists/0V8xaun2So5GLeMAC0fpbW',
+       id: '0V8xaun2So5GLeMAC0fpbW',
+       name: 'Ha Ha Tonka',
+       type: 'artist',
+       uri: 'spotify:artist: 0V8xaun2So5GLeMAC0fpbW'
+          }
+        ],
+  disc_number: 1,
+  duration_ms: 305746,
+  explicit: false,
+  external_ids: { isrc: 'USA361320706'
+        },
+  external_urls: { spotify: 'https: //open.spotify.com/track/0tOFsSxBw0NjGQ8USId3bS' },
+  href: 'https: //api.spotify.com/v1/tracks/0tOFsSxBw0NjGQ8USId3bS',
+  id: '0tOFsSxBw0NjGQ8USId3bS',
+  is_local: false,
+  is_playable: true,
+  name: 'Lessons',
+  popularity: 31,
+  preview_url:
+   'https: //p.scdn.co/mp3-preview/78f6165c1e53f10bf091cb04b51e97d9646a3551?cid=39f8867fb4c943e09964b511287c0c7b',
+  track_number: 6,
+  type: 'track',
+  uri: 'spotify:track: 0tOFsSxBw0NjGQ8USId3bS'
+        }

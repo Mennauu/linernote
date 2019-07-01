@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="21px" viewBox="0 0 22 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Home</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Navigation-Bar---III" transform="translate(-68.000000, -17.000000)" fill="#FFFFFF">
+            <g id="Home---Active">
+                <g transform="translate(68.000000, 17.068966)">
+                    <g id="Home">
+                        <path d="M13.6190476,20.6645147 L13.6190476,14.6926532 C13.6190476,13.2461932 12.4464601,12.0736056 11,12.0736056 C9.55353994,12.0736056 8.38095238,13.2461932 8.38095238,14.6926532 L8.38095238,20.6645147 L1,20.6645147 C0.44771525,20.6645147 6.76353751e-17,20.2167994 0,19.6645147 L6.66133815e-16,9.66621814 C6.30643904e-16,9.37642103 0.125717214,9.10087579 0.344594315,8.91094112 L10.3445943,0.233255166 C10.7206131,-0.0930421309 11.2793869,-0.0930421309 11.6554057,0.233255166 L21.6554057,8.91094112 C21.8742828,9.10087579 22,9.37642103 22,9.66621814 L22,19.6645147 C22,20.2167994 21.5522847,20.6645147 21,20.6645147 L13.6190476,20.6645147 Z" id="Combined-Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -2,7 +2,7 @@
 <img alt="Linernote logo" src="PROJECT-assets/readme/linernote-logo.png" width="300">
 </p>
 
-<h1 align="center">Meesterproef 2019 @cmda-minor-web · 2018-2019</h1>
+<h1 align="center">Linernote</h1>
 
 <p align="center"><b>Linernote brings Spotify, Youtube, articles and Social Media content from artists together in one app, supplemented by concert tickets.</b>
 </p>

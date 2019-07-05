@@ -364,6 +364,15 @@ small {
         width: 100%;
         height: 100%;
       }
+
+      .youtube__meta {
+        padding: 10px;
+        background-color: $white;
+        font-size: 1.2em;
+        height: 68px;
+        display: flex;
+        align-items: center;
+      }
     }
   }
 
@@ -399,12 +408,33 @@ small {
 
 .article {
   &__logo {
-    max-height: 50px;
-    padding: 14px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    height: 58px;
     background-color: $white;
 
     &--image {
-      max-height: 22px;
+      height: 30px;
+      width: 30px;
+      border-radius: $rounded;
+      object-fit: cover;
+    }
+
+    &--main {
+      height: 18px;
+      margin-left: auto;
+      padding-left: 0.5em;
+    }
+  }
+
+  &__name {
+    text-transform: lowercase;
+    margin-left: 0.5em;
+    font-weight: 500;
+
+    &:first-letter {
+      text-transform: uppercase;
     }
   }
 
@@ -433,6 +463,7 @@ small {
 
   &__meta {
     padding: 1em;
+    background-color: $white;
 
     small {
       color: $black;
@@ -441,14 +472,18 @@ small {
 
   &__image {
     width: 100%;
+    object-fit: cover;
+    max-height: 350px;
   }
 }
 
 .ticketmaster {
   &__logo {
+    height: 58px;
     padding: 10px;
     display: flex;
     align-items: center;
+    background-color: $white;
 
     &--image {
       height: 30px;
@@ -458,7 +493,7 @@ small {
     }
 
     &--main {
-      height: 12px;
+      height: 18px;
       margin-left: auto;
       padding-left: 0.5em;
     }
@@ -467,7 +502,7 @@ small {
   &__name {
     text-transform: lowercase;
     margin-left: 0.5em;
-    font-weight: 700;
+    font-weight: 500;
 
     &:first-letter {
       text-transform: uppercase;
@@ -476,6 +511,8 @@ small {
 
   &__image {
     width: 100%;
+    object-fit: cover;
+    max-height: 350px;
   }
 
   &__link {
@@ -1001,4 +1038,156 @@ $duration: 1.4s;
 .no-song {
   padding-left: 2em;
   margin-left: 2em;
+}
+
+.filter {
+  background: rgba($black-dark, 0.9);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left:0; 
+  right:0;
+  top:0; 
+  bottom: 100px;
+  margin: auto;
+  z-index: 999;
+  visibility: hidden;
+  color: $white;
+
+  &__button {
+    height: 62px;
+    width: 62px;
+    background-color: $purple;
+    position: fixed;
+    right: 1em;
+    bottom: 118px;
+    z-index: 9999;
+    border-radius: $rounded;
+    box-shadow: 0 .125rem .25rem rgba($black,.075);
+    cursor: pointer;
+  }
+
+  .header__title {
+    font-size: 1.5em;
+    margin-top: 2em;
+  }
+
+  legend {
+    margin-bottom: 1em;
+    font-weight: 500;
+  }
+
+  input {
+    width: auto;
+  }
+
+
+  input[type="checkbox"]:checked + label {
+    background-color: $white;
+    color: $black;
+  }
+
+  .checkbox__label {
+    background-color: $gray-dark;
+    color: $gray;
+    border-radius: 500px;
+    padding: 0.55em 1.5em;
+    cursor: pointer;
+  }
+
+  input[type="checkbox"] {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+
+  input[type="radio"] {
+    margin-left: 1.5em;
+  }
+
+  [type="radio"]:checked,
+  [type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+  }
+
+  [type="radio"]:checked + label,
+  [type="radio"]:not(:checked) + label {
+      position: relative;
+      padding-left: 28px;
+      cursor: pointer;
+      line-height: 20px;
+      display: inline-block;
+      color: $white;
+  }
+
+  [type="radio"]:checked + label:before,
+  [type="radio"]:not(:checked) + label:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      border: 1px solid $gray-dark;
+      border-radius: 100%;
+      background: rgba($black-dark, 0.9);
+  }
+
+  [type="radio"]:checked + label:after,
+  [type="radio"]:not(:checked) + label:after {
+      content: '';
+      width: 12px;
+      height: 12px;
+      background: $purple;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      border-radius: 100%;
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+  }
+
+  [type="radio"]:not(:checked) + label:after {
+      opacity: 0;
+      -webkit-transform: scale(0);
+      transform: scale(0);
+  }
+
+  [type="radio"]:checked + label:after {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+  }
+
+  [type="radio"]:checked + label:before {
+    border: 1px solid $purple !important;
+  }
+
+  #recent {
+    margin-left: 0;
+  }
+
+  .radio__label {
+    margin-right: 2em;
+  }
+
+  fieldset {
+    border: 0;
+  }
+
+  form {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  .reset {
+    position: fixed;
+    left: 1em;
+    bottom: 118px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+  }
 }

@@ -62,16 +62,20 @@ export const twitter = async (socials) => {
   return
 }
 
-export const youtube = async (socials) => {
+export const youtube = async (socials, name, image) => {
   const meta = socials.find(object => object['youtube'])
 
   if (meta !== undefined) {
     const data = await (await fetch(`https://www.googleapis.com/youtube/v3/channels?part=contentDetails&forUsername=${meta.username}&key=${process.env.YOUTUBE_API_KEY}`)).json()
     const playlistID = data.items[0].contentDetails.relatedPlaylists.uploads
     const userVideos = await (await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails,status&playlistId=${playlistID}&key=${process.env.YOUTUBE_API_KEY}`)).json()
+    const title = userVideos.items[0].snippet.title
     const shortcode = userVideos.items[0].contentDetails.videoId
     const date = userVideos.items[0].contentDetails.videoPublishedAt
     const object = {
+      artist_image: image,
+      artist_name: name,
+      title,
       youtube_url: meta.youtube,
       username: meta.username,
       shortcode,
@@ -82,13 +86,15 @@ export const youtube = async (socials) => {
   return
 }
 
-export const thenewyorktimes = async (name) => {
+export const thenewyorktimes = async (name, image) => {
   const data = await (await fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${name}&fq=source:("The New York Times")&api-key=${process.env.NEWYORKTIMES_API_KEY}`)).json()
   const article = data.response.docs[0]
   const date = new Date(article.pub_date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
 
   if (article.multimedia.length > 0) {
     const object = {
+      artist_image: image,
+      artist_name: name,
       thenewyorktimes_url: article.web_url,
       title: article.headline.main,
       description: article.lead_paragraph,
@@ -119,7 +125,7 @@ export const ticketmaster = async (name, image) => {
   }
 }
 
-export const googlenews = async (name) => {
+export const googlenews = async (name, image) => {
   const data = await (await fetch(`https://newsapi.org/v2/everything?q=${name}&apiKey=${process.env.GOOGLENEWS_API_KEY}
   `)).json()
   const articles = Array.from(data.articles.reduce((m, t) => m.set(t.source.name, t), new Map()).values())
@@ -127,5 +133,15 @@ export const googlenews = async (name) => {
   const sources = ['Pitchfork.com', 'Vice News', 'Wired', 'Bcc.com', 'Npr.org', 'BBC News']
   const objects = filteredArticles.filter(element => sources.includes(element.source))
 
-  return objects
+  const completedObjects = []
+
+  for (let object of objects) {
+    Object.assign(object, {
+      artist_image: image,
+      artist_name: name
+    })
+
+    completedObjects.push(object)
+  }
+  return completedObjects
 }

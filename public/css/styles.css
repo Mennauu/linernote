@@ -395,6 +395,19 @@ small {
   height: 100%;
 }
 
+.feed__item--youtube .youtube__meta {
+  padding: 10px;
+  background-color: #fff;
+  font-size: 1.2em;
+  height: 68px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .feed__ratio--wrapper {
   position: relative;
   padding-bottom: 56.25%;
@@ -425,13 +438,39 @@ small {
 }
 
 .article__logo {
-  max-height: 50px;
-  padding: 14px;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 58px;
   background-color: #fff;
 }
 
 .article__logo--image {
-  max-height: 22px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.article__logo--main {
+  height: 18px;
+  margin-left: auto;
+  padding-left: 0.5em;
+}
+
+.article__name {
+  text-transform: lowercase;
+  margin-left: 0.5em;
+  font-weight: 500;
+}
+
+.article__name:first-letter {
+  text-transform: uppercase;
 }
 
 .article__title {
@@ -459,6 +498,7 @@ small {
 
 .article__meta {
   padding: 1em;
+  background-color: #fff;
 }
 
 .article__meta small {
@@ -467,9 +507,13 @@ small {
 
 .article__image {
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 350px;
 }
 
 .ticketmaster__logo {
+  height: 58px;
   padding: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -477,6 +521,7 @@ small {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #fff;
 }
 
 .ticketmaster__logo--image {
@@ -488,7 +533,7 @@ small {
 }
 
 .ticketmaster__logo--main {
-  height: 12px;
+  height: 18px;
   margin-left: auto;
   padding-left: 0.5em;
 }
@@ -496,7 +541,7 @@ small {
 .ticketmaster__name {
   text-transform: lowercase;
   margin-left: 0.5em;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .ticketmaster__name:first-letter {
@@ -505,6 +550,9 @@ small {
 
 .ticketmaster__image {
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 350px;
 }
 
 .ticketmaster__link {
@@ -1148,5 +1196,162 @@ small {
 .no-song {
   padding-left: 2em;
   margin-left: 2em;
+}
+
+.filter {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 100px;
+  margin: auto;
+  z-index: 999;
+  visibility: hidden;
+  color: #fff;
+}
+
+.filter__button {
+  height: 62px;
+  width: 62px;
+  background-color: #7f6cff;
+  position: fixed;
+  right: 1em;
+  bottom: 118px;
+  z-index: 9999;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0.125rem 0.25rem rgba(23, 23, 23, 0.075);
+          box-shadow: 0 0.125rem 0.25rem rgba(23, 23, 23, 0.075);
+  cursor: pointer;
+}
+
+.filter .header__title {
+  font-size: 1.5em;
+  margin-top: 2em;
+}
+
+.filter legend {
+  margin-bottom: 1em;
+  font-weight: 500;
+}
+
+.filter input {
+  width: auto;
+}
+
+.filter input[type="checkbox"]:checked + label {
+  background-color: #fff;
+  color: #171717;
+}
+
+.filter .checkbox__label {
+  background-color: #3F3F3F;
+  color: #bebebe;
+  border-radius: 500px;
+  padding: 0.55em 1.5em;
+  cursor: pointer;
+}
+
+.filter input[type="checkbox"] {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.filter input[type="radio"] {
+  margin-left: 1.5em;
+}
+
+.filter [type="radio"]:checked,
+.filter [type="radio"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+.filter [type="radio"]:checked + label,
+.filter [type="radio"]:not(:checked) + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+  color: #fff;
+}
+
+.filter [type="radio"]:checked + label:before,
+.filter [type="radio"]:not(:checked) + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #3F3F3F;
+  border-radius: 100%;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.filter [type="radio"]:checked + label:after,
+.filter [type="radio"]:not(:checked) + label:after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: #7f6cff;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.filter [type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+.filter [type="radio"]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.filter [type="radio"]:checked + label:before {
+  border: 1px solid #7f6cff !important;
+}
+
+.filter #recent {
+  margin-left: 0;
+}
+
+.filter .radio__label {
+  margin-right: 2em;
+}
+
+.filter fieldset {
+  border: 0;
+}
+
+.filter form {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.filter .reset {
+  position: fixed;
+  left: 1em;
+  bottom: 118px;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
 }
 /*# sourceMappingURL=styles.css.map */

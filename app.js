@@ -57,8 +57,8 @@ app.post('/search', route.searchArtists)
 io.on("connect", socket => {
   getPlayBackState(socket)
 
-  socket.on('artist-name', async (name) => {
-    socket.emit('artist-data', await getArtistData(name))
+  socket.on('artist-name', async (data) => {
+    socket.emit('artist-data', await getArtistData(data.normalizedName, data.image))
   })
   socket.on('following-list', async (data) => {
     socket.emit('artist-data', await getMultipleArtistData(data.followList, data.token))

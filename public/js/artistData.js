@@ -19,8 +19,9 @@
   } else {
     const name = document.querySelector('.carousel__name').innerText
     const normalizedName = name.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
+    const image = document.querySelector('.carousel__image').src
 
-    socket.emit('artist-name', normalizedName)
+    socket.emit('artist-name', { normalizedName, image })
   }
 
   socket.on('artist-data', (data) => {

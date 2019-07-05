@@ -40,7 +40,7 @@ export const getMultipleArtistData = async (data, token) => {
         const twitterData = await api.twitter(socials)
         twitter.push(twitterData)
 
-        const youtubeData = await api.youtube(socials)
+        const youtubeData = await api.youtube(socials, name, artist.images[1].url)
         youtube.push(youtubeData)
 
         socials = []
@@ -52,10 +52,10 @@ export const getMultipleArtistData = async (data, token) => {
     const ticketmasterData = await api.ticketmaster(name, artist.images[1].url)
     ticketmaster.push(ticketmasterData)
 
-    const thenewyorktimesData = await api.thenewyorktimes(name)
+    const thenewyorktimesData = await api.thenewyorktimes(name, artist.images[1].url)
     thenewyorktimes.push(thenewyorktimesData)
 
-    const googlenewsData = await api.googlenews(name)
+    const googlenewsData = await api.googlenews(name, artist.images[1].url)
     if (googlenewsData[0] !== undefined) {
       googlenews.push(googlenewsData[0])
     }
@@ -75,7 +75,7 @@ export const getMultipleArtistData = async (data, token) => {
 
 }
 
-export const getArtistData = async (name) => {
+export const getArtistData = async (name, image) => {
   let socials = []
   const musicbrainz = await api.muzicbrainz(name)
 
@@ -94,10 +94,10 @@ export const getArtistData = async (name) => {
   const socialLinks = {
     'instagram': await api.instagram(socials),
     'twitter': await api.twitter(socials),
-    'youtube': await api.youtube(socials),
-    'thenewyorktimes': await api.thenewyorktimes(name),
+    'youtube': await api.youtube(socials, name, image),
+    'thenewyorktimes': await api.thenewyorktimes(name, image),
     'ticketmaster': await api.ticketmaster(name),
-    'googlenews': await api.googlenews(name)
+    'googlenews': await api.googlenews(name, image)
   }
   return socialLinks
 }

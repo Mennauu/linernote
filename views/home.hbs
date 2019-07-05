@@ -34,6 +34,33 @@
   </div>
 </main>
 
+<div class="filter__button">
+  <img src="/images/filter.svg" alt="filter">
+</div>
+
+<div class="filter">
+  <h2 class="header__title">Filter</h2>
+  <form>
+    <fieldset>
+      <legend>Sort by</legend>
+      <input type="radio" id="recent" name="radio-group">
+      <label for="recent" class="radio__label">Most recent</label>
+      <input type="radio" id="trending" name="radio-group">
+      <label for="trending" class="radio__label">Trending</label>
+    </fieldset>
+  </form>
+  <form>
+    <fieldset>
+      <legend>Keywords</legend>
+      <input type="checkbox" id="instagram" name="instagram">
+      <label for="instagram" class="checkbox__label">Instagram</label>
+      <input type="checkbox" id="twitter" name="twitter">
+      <label for="twitter" class="checkbox__label">Twitter</label>
+    </fieldset>
+  </form>
+  <span class="reset">Reset All</span>
+</div>
+
 <script id="artist-data-template" type="text/x-handlebars-template">
 \{{#if instagram}}
   \{{#each instagram}}
@@ -150,11 +177,16 @@
     \{{#if shortcode}}
     <div class="feed__item feed__item--youtube">
       <div class="article__logo">
-        <img class="article__logo--image" src="/images/youtube-logo.png" alt="Youtube Logo">
+        <img class="article__logo--image" src="\{{artist_image}}" alt="\{{artist_name}}">
+        <span class="article__name">\{{artist_name}}</span>
+        <img class="article__logo--main" src="/images/youtube-logo.png" alt="Youtube Logo">
       </div>
       <div class="feed__ratio--wrapper">
         <iframe width="100%" height="auto" src="https://www.youtube.com/embed/\{{shortcode}}" frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="youtube__meta">
+        <p>\{{artist_name}} - \{{title}}</p>
       </div>
     </div>
     \{{/if}}
@@ -163,9 +195,12 @@
 \{{#if thenewyorktimes}}
   \{{#each thenewyorktimes}}
     \{{#if thenewyorktimes_url}}
+    \{{log this}}
     <div class="feed__item feed__item--newyorktimes">
       <div class="article__logo">
-        <img class="article__logo--image" src="/images/tnyt-logo.png" alt="\{{source}}">
+        <img class="article__logo--image" src="\{{artist_image}}" alt="\{{artist_name}}">
+        <span class="article__name">\{{artist_name}}</span>
+        <img class="article__logo--main" src="/images/tnyt-logo.png" alt="\{{source}}">
       </div>
       <img class="article__image" src="https://static01.nyt.com/\{{image}}" alt="\{{source}}">
       <div class="article__meta">
@@ -217,7 +252,9 @@
     \{{#if url}}
       <div class="feed__item feed__item--googlenews">
         <div class="article__logo">
-          <img class="article__logo--image" src="\{{logo}}" alt="\{{source}}">
+          <img class="article__logo--image" src="\{{artist_image}}" alt="\{{artist_name}}">
+          <span class="article__name">\{{artist_name}}</span>
+          <img class="article__logo--main" src="\{{logo}}" alt="\{{source}}">
         </div>
         <img class="article__image" src="\{{urlToImage}}" alt="\{{source}}">
         <div class="article__meta">

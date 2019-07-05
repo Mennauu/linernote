@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="62px" height="62px" viewBox="0 0 62 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Filter</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home---Get-Started" transform="translate(-304.000000, -625.000000)">
+            <g id="Filter" transform="translate(304.000000, 625.000000)">
+                <circle id="Oval" fill="#7F6CFF" cx="31" cy="31" r="31"></circle>
+                <g id="Group-4" transform="translate(19.076923, 22.892308)" stroke="#FFFFFF">
+                    <g id="Group-3">
+                        <path d="M0.501141827,3.33846154 L24.3025841,3.33846154" id="Line-3" stroke-linecap="square"></path>
+                        <circle id="Oval" fill="#7F6CFF" cx="16.6923077" cy="3.33846154" r="3.33846154"></circle>
+                    </g>
+                    <g id="Group-3-Copy" transform="translate(12.400000, 12.876923) scale(-1, 1) translate(-12.400000, -12.876923) translate(0.000000, 9.538462)">
+                        <path d="M0.501141827,3.33846154 L24.3025841,3.33846154" id="Line-3" stroke-linecap="square"></path>
+                        <circle id="Oval" fill="#7F6CFF" cx="16.6923077" cy="3.33846154" r="3.33846154"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

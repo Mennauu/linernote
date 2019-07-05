@@ -7,4 +7,14 @@
       message.classList.remove('visible')
     }, 3000)
   })
+
+  const filter = document.querySelector('.filter')
+  const filterButton = document.querySelector('.filter__button')
+  filterButton.addEventListener('click', () => {
+    if (filter.classList.contains('visible')) {
+      filter.classList.remove('visible')
+    } else {
+      filter.classList.add('visible')
+    }
+  })
 })()

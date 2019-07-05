@@ -10,5 +10,9 @@
     }
   })
 
-  fitty(".carousel__name", { maxSize: 56 })
+  fitty(".carousel__name", {
+    minSize: 40,
+    maxSize: 56,
+    multiLine: true
+  })
 })()

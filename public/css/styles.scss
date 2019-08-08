@@ -133,10 +133,12 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 2rem;
+  line-height: 1 !important;
 }
 
 p {
   color: $black;
+  line-height: 1.43;
 }
 
 a { 
@@ -218,16 +220,24 @@ small {
   text-decoration: none;
 
   &--spotify {
-    background-color: $green;
+    background-color: transparent;
     color: $white;
     font-weight: bold;
-    text-transform: uppercase;
-    display: inline-block;
+    display: flex;
+    align-items: center;
     margin: 0 auto;
+    border: 1px solid $gray;
+    border-radius: 500px;
+    padding: 0.56em 1.8em 0.56em 1.8em;
 
     &:hover {
-      background-color: $green-dark;
+      background-color: $black;
       text-decoration: none;
+    }
+
+    img {
+      max-width: 26px;
+      margin-right: 0.5rem;
     }
   }
 }
@@ -368,7 +378,7 @@ small {
       .youtube__meta {
         padding: 10px;
         background-color: $white;
-        font-size: 1.2em;
+        font-size: 1.0625rem;
         height: 68px;
         display: flex;
         align-items: center;
@@ -429,9 +439,9 @@ small {
   }
 
   &__name {
-    text-transform: lowercase;
     margin-left: 0.5em;
     font-weight: 500;
+    font-size: 0.875rem;
 
     &:first-letter {
       text-transform: uppercase;
@@ -493,7 +503,7 @@ small {
     }
 
     &--main {
-      height: 18px;
+      height: 14px;
       margin-left: auto;
       padding-left: 0.5em;
     }
@@ -668,8 +678,8 @@ small {
     
       > .align-bottom {
         margin-bottom: 60px;
-        width: calc(100% - 2em);
-        margin-left: 1em;
+        width: calc(100% - 4em);
+        margin-left: 2em;
       }
     }
   }
@@ -728,6 +738,7 @@ small {
     color: $white;
     padding: 0.3em 1em;
     text-transform: uppercase;
+    font-family: "Founders Grotesk", sans-serif;
     margin-top: -10px;
     cursor: pointer;
     transition: 0.5s;
@@ -902,11 +913,17 @@ small {
   flex-direction: column;
   justify-content: center;
   position: absolute; 
-  left:0; 
-  right:0;
-  top:0; 
-  bottom:0;
+  left: 0; 
+  right: 0;
+  top: 0; 
+  bottom: 0;
   margin: auto;
+
+  &__title {
+    font-size: 4rem;
+    line-height: 0.9;
+    font-weight: normal;
+  }
 
   &__logo {
     max-width: 80%;
@@ -914,12 +931,14 @@ small {
   }
 
   &__note {
-    margin-top: 1em;
-    display: block;
+   position: absolute;
+   bottom: 2rem;
+   color: $gray-dark;
 
     a {
       font-weight: bold;
       text-decoration: underline;
+      color: $gray-dark;
 
       &:hover {
         color: $white;
@@ -929,8 +948,8 @@ small {
 
   &__description {
     max-width: 80%;
-    color: $white;
-    margin-bottom: 6em;
+    color: $gray;
+    margin-bottom: 2em;
   }
 }
 
@@ -1058,7 +1077,6 @@ $duration: 1.4s;
   &__button {
     height: 62px;
     width: 62px;
-    background-color: $purple;
     position: fixed;
     right: 1em;
     bottom: 118px;

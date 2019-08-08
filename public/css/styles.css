@@ -113,10 +113,12 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 2rem;
+  line-height: 1 !important;
 }
 
 p {
   color: #171717;
+  line-height: 1.43;
 }
 
 a {
@@ -202,17 +204,29 @@ small {
 }
 
 .button--spotify {
-  background-color: #1db954;
+  background-color: transparent;
   color: #fff;
   font-weight: bold;
-  text-transform: uppercase;
-  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0 auto;
+  border: 1px solid #bebebe;
+  border-radius: 500px;
+  padding: 0.56em 1.8em 0.56em 1.8em;
 }
 
 .button--spotify:hover {
-  background-color: #179443;
+  background-color: #171717;
   text-decoration: none;
+}
+
+.button--spotify img {
+  max-width: 26px;
+  margin-right: 0.5rem;
 }
 
 /********************************
@@ -398,7 +412,7 @@ small {
 .feed__item--youtube .youtube__meta {
   padding: 10px;
   background-color: #fff;
-  font-size: 1.2em;
+  font-size: 1.0625rem;
   height: 68px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -464,9 +478,9 @@ small {
 }
 
 .article__name {
-  text-transform: lowercase;
   margin-left: 0.5em;
   font-weight: 500;
+  font-size: 0.875rem;
 }
 
 .article__name:first-letter {
@@ -533,7 +547,7 @@ small {
 }
 
 .ticketmaster__logo--main {
-  height: 18px;
+  height: 14px;
   margin-left: auto;
   padding-left: 0.5em;
 }
@@ -721,8 +735,8 @@ small {
 
 .swiper-slide--first > .align-bottom {
   margin-bottom: 60px;
-  width: calc(100% - 2em);
-  margin-left: 1em;
+  width: calc(100% - 4em);
+  margin-left: 2em;
 }
 
 .swiper-pagination-bullet {
@@ -780,6 +794,7 @@ small {
   color: #fff;
   padding: 0.3em 1em;
   text-transform: uppercase;
+  font-family: "Founders Grotesk", sans-serif;
   margin-top: -10px;
   cursor: pointer;
   -webkit-transition: 0.5s;
@@ -994,19 +1009,27 @@ small {
   margin: auto;
 }
 
+.authentication__title {
+  font-size: 4rem;
+  line-height: 0.9;
+  font-weight: normal;
+}
+
 .authentication__logo {
   max-width: 80%;
   margin-bottom: 1.5em;
 }
 
 .authentication__note {
-  margin-top: 1em;
-  display: block;
+  position: absolute;
+  bottom: 2rem;
+  color: #3F3F3F;
 }
 
 .authentication__note a {
   font-weight: bold;
   text-decoration: underline;
+  color: #3F3F3F;
 }
 
 .authentication__note a:hover {
@@ -1015,8 +1038,8 @@ small {
 
 .authentication__description {
   max-width: 80%;
-  color: #fff;
-  margin-bottom: 6em;
+  color: #bebebe;
+  margin-bottom: 2em;
 }
 
 /********************************
@@ -1222,7 +1245,6 @@ small {
 .filter__button {
   height: 62px;
   width: 62px;
-  background-color: #7f6cff;
   position: fixed;
   right: 1em;
   bottom: 118px;

@@ -2,6 +2,8 @@ console.log('Hello from service-worker.js')
 
 const filesToCache = [
   '/home',
+  '/login',
+  '/search'
 ]
 
 const staticCacheName = 'pages-cache-v1';

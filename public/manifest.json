@@ -1,7 +1,7 @@
 {
   "name": "Linernote",
-  "short_name": "LN",
-  "start_url": "/home",
+  "short_name": "Linernote",
+  "start_url": "https://linernote.herokuapp.com/",
   "scope": "./",
   "icons": [
     {
@@ -17,5 +17,6 @@
   ],
   "theme_color": "#ffee00",
   "background_color": "#ffee00",
-  "display": "standalone"
+  "display": "standalone",
+  "orientation": "fullscreen"
 }

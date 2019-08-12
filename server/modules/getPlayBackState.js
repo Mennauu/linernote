@@ -1,6 +1,6 @@
 const SpotifyWebApi = require('spotify-web-api-node')
 
-export const getPlayBackState = (socket) => {
+export const getPlayBackState = async (socket) => {
   // setInterval(async () => {
   //   try {
   const cookie = socket.handshake.headers.cookie
